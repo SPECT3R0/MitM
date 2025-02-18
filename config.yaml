@@ -1,0 +1,13 @@
+interface: eth0
+targets:
+  - ip: $TARGET_IP
+    gateway: $GATEWAY_IP
+dns_spoof:
+  - domain: example.com
+    to_ip: $SPOOF_IP
+evasion:
+  use_encryption: true
+  traffic_shaping: true
+  dynamic_payload: true
+  use_fragmentation: true
+  use_decoy: true
