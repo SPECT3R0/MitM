@@ -6,8 +6,7 @@
 
 # Darkside - Offensive Network Security Framework
 
-![Darkside Banner](https://via.placeholder.com/1200x300.png?text=Darkside+MITM+Framework)  
-*Note: Replace the placeholder image URL with an actual banner image if available.*
+![Darkside Banner](https://raw.githubusercontent.com/SPECT3R0/MitM/main/interface/darkside%20banner.png)
 
 ## Overview
 
