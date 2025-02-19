@@ -175,11 +175,5 @@ Darkside is intended for educational and ethical testing purposes only. Use it r
 
 ---
 
-**Notes for Implementation:**
-- Save this content as `README.md` in the root of your GitHub repository (`MitM`).
-- Replace the placeholder banner image URL with an actual image or remove it if unavailable.
-- Ensure the `LICENSE` file exists in your repository with the MIT License text.
-- Update the file structure section if your project has additional or different files/directories.
-
 
    
