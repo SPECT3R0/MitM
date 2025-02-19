@@ -1,6 +1,7 @@
 from scapy.all import *
 import logging
 import asyncio
+import random
 from cryptography.fernet import Fernet
 from evasion.traffic_shaping import shape_traffic
 from evasion.encryption_c2 import encrypt_command_control
@@ -8,7 +9,7 @@ from evasion.packet_fragmentation import fragment_packet
 from evasion.decoy_traffic import generate_decoy
 
 logger = logging.getLogger(__name__)
-cipher_suite = Fernet(Fernet.generate_key())  # Generate a key, in real scenarios, manage this securely
+cipher_suite = Fernet(Fernet.generate_key())  # Generate a key, manage securely in production
 
 async def handle_packet(packet, config, handlers):
     try:
@@ -20,8 +21,8 @@ async def handle_packet(packet, config, handlers):
         if fragment_packet(packet, config):
             return True  # If fragmented, consider the packet handled
 
-        # Generate decoy traffic periodically or based on some condition
-        if config.get('evasion', {}).get('use_decoy', False) and random.random() < 0.1:  # 10% chance to generate decoy
+        # Generate decoy traffic periodically
+        if config.get('evasion', {}).get('use_decoy', False) and random.random() < 0.1:  # 10% chance
             generate_decoy(config)
 
         # Continue with normal packet handling
